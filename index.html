@@ -23732,35 +23732,47 @@
         }
       })();
     </script>
-   <script>
+<script>
   (function () {
+    // Lấy tất cả element cần animation
     const elements = document.querySelectorAll('.is-animation');
     if (!elements.length) return;
 
-    const observer = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
+    // Tạo IntersectionObserver
+    const observer = new IntersectionObserver(
+      (entries, obs) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
 
-        const el = entry.target;
-        if (el.dataset.animated === "1") {
+          const el = entry.target;
+
+          // Tránh trigger lại nếu browser bắn nhiều lần
+          if (el.dataset.animated === "1") {
+            obs.unobserve(el);
+            return;
+          }
+
+          // Đánh dấu đã chạy
+          el.dataset.animated = "1";
+
+          // Add class animation (CSS của bạn sẽ chạy ở đây)
+          el.classList.add('animation');
+
+          // Chỉ chạy 1 lần → stop observe
           obs.unobserve(el);
-          return;
-        }
+        });
+      },
+      {
+        threshold: 0.1,                 // 10% là chạy
+        rootMargin: "0px 0px -20% 0px"   // trigger sớm hơn, đỡ cảm giác trễ
+      }
+    );
 
-        el.dataset.animated = "1";
-        let idx = 0;
-        el.style.animationDelay = (idx++ * 80) + "ms";
-        el.classList.add('animation');   // animation chạy theo CSS bạn đang có
-        obs.unobserve(el);               // chạy 1 lần
-      });
-    }, {
-      threshold: 0.15,
-      rootMargin: "0px 0px -10% 0px" // trigger sớm hơn chút, đỡ “giật” khi vừa chạm
-    });
-
+    // Observe từng element
     elements.forEach(el => observer.observe(el));
   })();
 </script>
+
 
   </body>
 </html>

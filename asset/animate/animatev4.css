@@ -4317,3 +4317,17 @@
   transform: translateZ(0); /* bật compositing */
   backface-visibility: hidden;
 }
+
+.is-animation {
+  opacity: 0;
+  visibility: hidden;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Khi JS add .animation thì mới hiện */
+.is-animation.animation {
+  opacity: 1;
+  visibility: visible;
+}
