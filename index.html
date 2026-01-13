@@ -2,7 +2,7 @@
 <html lang="vi" x:id="0deab37a-e31d-46ff-85db-6d8660a82503">
   <head>
     <meta charset="UTF-8" />
-    <title>Mẫu Thiệp 3</title>
+    <title>Ngọc Đang - Thanh Trúc</title>
     <meta name="keywords" content="" />
     <meta
       name="description"
@@ -38,17 +38,17 @@
       })(window, document, "DISPLAY");
     </script>
 
-    <link rel="canonical" href="https://www.elisawedding.click/Mâu3_Điền_Tên" />
+    <!-- <link rel="canonical" href="https://www.elisawedding.click/Mâu3_Điền_Tên" />
     <meta
       property="og:url"
       content="https://www.elisawedding.click/Mâu3_Điền_Tên"
-    />
+    /> -->
 
-    <meta property="og:title" content="Mẫu Thiệp 3" />
+    <meta property="og:title" content="Ngọc Đang - Thanh Trúc" />
     <meta property="og:type" content="website" />
     <meta
       property="og:image"
-      content="https://content.pancake.vn/1//3d/7c/0b/35/7c395be7832560714fe978edd33f683cfa388c7265ed4a864b6d79c8-w:853-h:1280-l:68456-t:image/jpeg.jpg"
+      content="asset/image/anh-seo.jpg"
     />
     <meta
       property="og:description"
@@ -61,14 +61,7 @@
       href="https://content.pancake.vn/1/s50x50/fwebp/3d/09/66/de/0a2f1f273c89bc8e3a47be51505ddc0f48ea6437c4108dc731a25c29-w:853-h:1280-l:333147-t:image/jpeg.jpg"
       sizes="16x16"
     />
-    <link rel="dns-prefetch" href="https://statics.pancake.vn" />
-    <link rel="dns-prefetch" href="https://content.pancake.vn" />
-    <link rel="dns-prefetch" href="https://www.youtube.com" />
-    <link rel="dns-prefetch" href="https://a.pancake.vn" />
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
-    <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin />
-    <link rel="preconnect" href="https://analytics.tiktok.com/i18n/pixel" />
-    <link rel="preconnect" href="https://analytics.tiktok.com/api/v2/pixel" />
+   
 
     <style type="text/css">
       * {
@@ -23570,6 +23563,12 @@
         if (targetImage && toggleGif && toggleGif.src) {
           targetImage.src = toggleGif.src;
         }
+        const el = document.getElementById('w-s0tzmrbo');
+
+        if (el) {
+          el.classList.add('animation');
+        }
+
 
         // Phát nhạc từ đầu, chỉnh âm lượng 65%
         music.currentTime = 0;
@@ -23617,15 +23616,6 @@
         }
       });
     </script>
-
-    <img
-      height="1"
-      width="1"
-      alt=""
-      style="display: none"
-      src="https://www.elisawedding.click//page_view.gif?pid=0deab37a-e31d-46ff-85db-6d8660a82503"
-    />
-
     
     <script>
       (function () {
@@ -23735,7 +23725,9 @@
 <script>
   (function () {
     // Lấy tất cả element cần animation
-    const elements = document.querySelectorAll('.is-animation');
+   const elements = document.querySelectorAll(
+      '.is-animation:not(#w-s0tzmrbo)'
+    );
     if (!elements.length) return;
 
     // Tạo IntersectionObserver
